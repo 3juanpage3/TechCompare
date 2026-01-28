@@ -1,5 +1,5 @@
 import { Laptop, getTierColor, getTierLabel } from '@/data/laptops';
-import { Cpu, HardDrive, Monitor, Gamepad2, ExternalLink, MemoryStick } from 'lucide-react';
+import { Cpu, HardDrive, Monitor, Gamepad2, MemoryStick } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface LaptopCardProps {
@@ -68,18 +68,6 @@ const LaptopCard = ({ laptop, isSelected, onSelect, index }: LaptopCardProps) =>
         <p className="text-xs text-muted-foreground mb-1">Best For</p>
         <p className="text-sm font-medium text-primary">{laptop.bestFor}</p>
       </div>
-
-      {/* Link button */}
-      <a
-        href={laptop.link}
-        target="_blank"
-        rel="noopener noreferrer"
-        onClick={(e) => e.stopPropagation()}
-        className="mt-4 flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 text-sm font-medium group/link"
-      >
-        View Deal
-        <ExternalLink className="w-4 h-4 group-hover/link:translate-x-0.5 transition-transform" />
-      </a>
     </div>
   );
 };
